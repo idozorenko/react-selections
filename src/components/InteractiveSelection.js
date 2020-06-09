@@ -48,14 +48,12 @@ class InteractiveSelection extends AbstractSelection {
     this.selectionEl.addEventListener('mousedown', this.handleMouseDownOnSelection);
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { area, containerParameters } = nextProps;
+  componentDidUpdate(nextProps) {
+    const { containerParameters } = nextProps;
 
     this.resizeCalculator = ResizeCalculator(containerParameters);
     this.dragCalculator = DragCalculator(containerParameters);
     this.containerParameters = containerParameters;
-
-    this.setState({ area });
   }
 
   componentWillUnmount() {

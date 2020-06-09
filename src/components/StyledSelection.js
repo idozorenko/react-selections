@@ -3,9 +3,6 @@ import CSSClassBuilder from 'css-class-combiner';
 import AbstractSelection from './AbstractSelection';
 
 class StyledSelection extends AbstractSelection {
-  componentWillReceiveProps(nextProps) {
-    this.setState({ area: nextProps.area });
-  }
 
   getClassName() {
     const { isHovered, isFocused } = this.state;

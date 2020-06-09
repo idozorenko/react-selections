@@ -21,12 +21,6 @@ class SelectionContainer extends Component {
     this.setRootParameters();
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.containerParameters !== this.props.containerParameters) {
-      this.setState({ rootParameters: nextProps.containerParameters });
-    }
-  }
-
   componentWillUnmount() {
     window.removeEventListener('resize', this.setRootParameters);
   }
